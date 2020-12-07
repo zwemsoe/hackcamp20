@@ -23,6 +23,9 @@ class App extends Component {
   
   render(){
     return (
+      <div>
+        <h6>HackCamp 2020</h6>
+        <h2>Smart Text Analytics</h2>
       <div className="App __display-grid-center">
           <div className="card" style={{boxShadow: "3px 3px 3px #888888"}}>
             <div className="card-body">
@@ -35,6 +38,7 @@ class App extends Component {
               </a>
             </div>
           </div>
+      </div>
       </div>
     );
   }
