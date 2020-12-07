@@ -19,16 +19,18 @@ def text_analysis(text):
 	sentenceLength = len(sentences)
 	
 	for i in range(sentenceLength):
-		retTuple = (sentences[i].mined_opinions[0].aspect.text, sentences[i].mined_opinions[0].opinions[0].sentiment)
-		returnList.append(retTuple)
-		retTuple = (sentences[i].mined_opinions[0].opinions[0].text, sentences[i].mined_opinions[0].aspect.sentiment)
-		returnList.append(retTuple)
+		if len(sentences[i].mined_opinions) > 0:
+			retTuple = (sentences[i].mined_opinions[0].aspect.text, sentences[i].mined_opinions[0].opinions[0].sentiment)
+			returnList.append(retTuple)
+			retTuple = (sentences[i].mined_opinions[0].opinions[0].text, sentences[i].mined_opinions[0].aspect.sentiment)
+			returnList.append(retTuple)
 
 
-		return returnList
+		
+	return returnList
 	
 		
 		
 #print(text_analysis(["C'mon cuh, where are you going!"]))
 
-#print(text_analysis(["The food and service were unacceptable, but the concierge were nice"]))
+print(text_analysis(["hello"]))
