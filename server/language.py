@@ -13,10 +13,22 @@ def text_analysis(text):
         endpoint="https://hackcamp2020.cognitiveservices.azure.com/", 
         credential=ta_credential)
 	
-	response = client.analyze_sentiment(documents=text)[0]
-	#print(response)
-	#let index 0 = happy, index 1 = neutral, index 2 = sad
-	return response.sentiment
+	response = client.analyze_sentiment(documents=text, show_opinion_mining=True)[0]
+	returnList = [response.sentiment]
+	sentences = response.sentences
+	sentenceLength = len(sentences)
+	
+	for i in range(sentenceLength):
+		retTuple = (sentences[i].mined_opinions[0].aspect.text, sentences[i].mined_opinions[0].opinions[0].sentiment)
+		returnList.append(retTuple)
+		retTuple = (sentences[i].mined_opinions[0].opinions[0].text, sentences[i].mined_opinions[0].aspect.sentiment)
+		returnList.append(retTuple)
+
+
+		return returnList
+	
 		
 		
-print(text_analysis(["C'mon cuh, where are you going!"]))
+#print(text_analysis(["C'mon cuh, where are you going!"]))
+
+#print(text_analysis(["The food and service were unacceptable, but the concierge were nice"]))
