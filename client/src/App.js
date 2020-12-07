@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import './App.css';
 
 class App extends Component {
@@ -16,8 +17,16 @@ class App extends Component {
     });
   }
 
-  handleClick = () => {
-
+  handleClick = async () => {
+    const {text} = this.state;
+    let data = new FormData();
+    data.append('text', text);
+    try{
+      const res = await axios.post(`/textAnalysis`, data);
+      console.log(res);
+      } catch (err) {
+        console.log(err);
+      }
   }
 
   
