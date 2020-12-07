@@ -31,6 +31,11 @@ def text_analysis(text):
 	
 		
 		
-#print(text_analysis(["C'mon cuh, where are you going!"]))
+
+print(text_analysis(["The restaurant had bad food and our waiter was friendly"]))
 
 print(text_analysis(["hello"]))
+print(text_analysis(["hello its me Ive been wondering"]))
+print(text_analysis(["The food and service were unacceptable, but the concierge were nice"]))
+print(text_analysis(["The ball was so crazy but it was a very sad day"]))
+print(text_analysis(["The school was very good but the teachers were very bad."]))
