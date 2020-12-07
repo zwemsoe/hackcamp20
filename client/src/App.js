@@ -26,6 +26,7 @@ class App extends Component {
       <div>
         <h6>HackCamp 2020</h6>
         <h2>Smart Text Analytics</h2>
+        
       <div className="App __display-grid-center">
           <div className="card" style={{boxShadow: "3px 3px 3px #888888"}}>
             <div className="card-body">
@@ -35,7 +36,7 @@ class App extends Component {
               <br/>
               <a className="btn btn-secondary" onClick={this.handleClick} href = "javascript:void(0)">
                 Submit
-              </a>
+              </a> 
             </div>
           </div>
       </div>
